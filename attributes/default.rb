@@ -79,4 +79,4 @@ when 'server-bridge'
 end
 
 # NAT server clients on external interface
-default['openvpn']['config']['nat_clients']     = false
+default['openvpn']['nat_clients']     = false

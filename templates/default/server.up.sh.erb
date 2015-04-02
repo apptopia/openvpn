@@ -6,7 +6,7 @@
 # Turn on IP forwarding
 /sbin/sysctl -w net.ipv4.ip_forward=1
 
-<% if node['openvpn']['config']['nat_clients'] == true %>
+<% if node['openvpn']['nat_clients'] == true %>
 # Set up iptables NAT rules as needed.
 /sbin/iptables -t nat -A POSTROUTING -s <%= node['openvpn']['subnet'] %>/<%= node['openvpn']['netmask'] %> -o <%= node['network']['default_interface'] %> -j MASQUERADE
 <% end %>
