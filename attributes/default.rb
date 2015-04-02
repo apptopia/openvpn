@@ -77,3 +77,6 @@ when 'server'
 when 'server-bridge'
   default['openvpn']['config']['dev'] = 'tap0'
 end
+
+# NAT server clients on external interface
+default['openvpn']['config']['nat_clients']     = false
